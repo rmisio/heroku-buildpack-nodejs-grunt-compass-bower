@@ -9,10 +9,6 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
-status "Build Dir: $build_dir"
-status "Cache Dir: $cache_dir"
-status "Env Dir: $env_dir"
-
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # Load some convenience functions like status(), echo(), and indent()
@@ -44,6 +40,11 @@ else
   status "Requested node range:  $semver_range"
   status "Resolved node version: $node_version"
 fi
+
+#temp
+status "Build Dir: $build_dir"
+status "Cache Dir: $cache_dir"
+status "Env Dir: $env_dir"
 
 # Download node from Heroku's S3 mirror of nodejs.org/dist
 status "Downloading and installing node"
