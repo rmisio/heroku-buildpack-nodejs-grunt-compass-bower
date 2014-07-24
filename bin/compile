@@ -9,6 +9,10 @@ build_dir=$1
 cache_dir=$2
 env_dir=$3
 
+status "Build Dir: $build_dir"
+status "Cache Dir: $cache_dir"
+status "Env Dir: $env_dir"
+
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
 # Load some convenience functions like status(), echo(), and indent()
