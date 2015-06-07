@@ -93,7 +93,12 @@ fi
 #   fi
 # fi
 
-status "BOOM"
+# heroku seems to have updated its caching of node_modules:
+# https://devcenter.heroku.com/articles/nodejs-support#cache-behavior
+# the above commented block doesn't work we1l with the updates - no new
+# node_modules end up getting installed.
+# TODO: update to take into account new cache structure
+status "Rebuilding any native dependencies"
 npm rebuild 2>&1 | indent
 
 # Scope config var availability only to `npm install`
